@@ -19,12 +19,23 @@ fortescue_matrix = np.array(
     )
 )
 
-v_a, v_b, v_c = 0
+v_a, v_b, v_c = 0, 0, 0
+i_a, i_b, i_c = 0, 0, 0
 
-real_components = np.array(
+voltage_components = np.array(
     np.asmatrix(
-        f'{v_a} {v_b} {v_c}'
+        f'{v_a}; {v_b}; {v_c}'
     )
 )
 
-symmetrical_components = (1/3) * ( np*linalg.inv(a) @  ) 
+current_components = np.array(
+    np.asmatrix(
+        f'{i_a}; {i_b}; {i_c}'
+    )
+)
+
+def invert_matrix(matrix):
+    return np.linalg.inv(matrix)
+
+voltage_symmetrical_components = (1/3) * (invert_matrix(fortescue_matrix) @ voltage_components)
+current_symmetrical_components = (1/3) * (invert_matrix(fortescue_matrix) @ current_components)
