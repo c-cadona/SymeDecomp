@@ -13,6 +13,18 @@ Zero        n1      n2      n3
 Positiva    n4      n5      n6
 Negativa    n7      n8      n9
 """
-fortescue_matrix = np.array(np.asmatrix(f'1 1 1; 1 {a**2} {a}; 1 {a} {a**2}'))
+fortescue_matrix = np.array(
+    np.asmatrix(
+        f'1 1 1; 1 {a**2} {a}; 1 {a} {a**2}'
+    )
+)
 
-print(fortescue_matrix)
+v_a, v_b, v_c = 0
+
+real_components = np.array(
+    np.asmatrix(
+        f'{v_a} {v_b} {v_c}'
+    )
+)
+
+symmetrical_components = (1/3) * ( np*linalg.inv(a) @  ) 
