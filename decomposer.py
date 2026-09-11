@@ -20,8 +20,8 @@ fortescue_matrix = np.array(
     )
 )
 
-v_a, v_b, v_c = cmath.rect(1, math.radians(0)), cmath.rect(1, math.radians(45)), cmath.rect(1, math.radians(240))
-i_a, i_b, i_c = cmath.rect(1, math.radians(30)), cmath.rect(1, math.radians(120)), cmath.rect(1, math.radians(240))
+v_a, v_b, v_c = cmath.rect(1, math.radians(0)), cmath.rect(0.8, math.radians(240)), cmath.rect(1, math.radians(120))
+i_a, i_b, i_c = cmath.rect(1, math.radians(0)), cmath.rect(1, math.radians(120)), cmath.rect(1, math.radians(240))
 
 voltage_components = np.array(
     np.asmatrix(
@@ -38,8 +38,8 @@ current_components = np.array(
 def invert_matrix(matrix):
     return np.linalg.inv(matrix)
 
-voltage_symmetrical_components = (1/3) * (invert_matrix(fortescue_matrix) @ voltage_components)
-current_symmetrical_components = (1/3) * (invert_matrix(fortescue_matrix) @ current_components)
+voltage_symmetrical_components = (invert_matrix(fortescue_matrix) @ voltage_components)
+current_symmetrical_components = (invert_matrix(fortescue_matrix) @ current_components)
 
 print(
     f"Voltage Symmetrical Components:\n"
@@ -126,6 +126,12 @@ def plot_components(components, labels=None, colors=None):
 
 plot_components(
     voltage_components,
-    labels=['V_a', 'V_b', 'V_c'],
+    labels=['Va', 'Vb', 'Vc'],
     colors=['r', 'g', 'b']
+)
+
+plot_components(
+    voltage_symmetrical_components,
+    labels=['V0', 'V+', 'V-'],
+    colors=['gray', 'orange', 'purple']
 )
