@@ -1,6 +1,6 @@
 # Fundamentação Teórica — Etapa 0.1
 
-**Projeto:** Analisador de Componentes Simétricas em Tempo Real para Redes Trifásicas
+**Projeto:** SymeDecomp
 **Disciplina:** Projeto Nível I em Eletrônica Pot. e Acion. III
 **Alunos:** Arthur Augusto Dahlke e Guilherme Cadona da Silva
 
