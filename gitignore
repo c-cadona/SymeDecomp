@@ -1,0 +1,32 @@
+# Ambiente virtual
+venv/
+env/
+.venv/
+
+# Cache e bytecode do Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Jupyter (se usarem notebooks para explorar dados)
+.ipynb_checkpoints/
+
+# Configurações de IDE
+.vscode/
+.idea/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Streamlit (Fase 2)
+.streamlit/secrets.toml
+
+# Firmware / build do ESP32 (Fase 3-4)
+firmware/.pio/
+firmware/build/
+
+# Arquivos de dados/saída gerados localmente (ajustar se quiserem versionar)
+*.log
+*.csv
